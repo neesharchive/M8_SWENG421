@@ -42,6 +42,8 @@ namespace TvSystem
                 $"Brand={getBrand()} Type={getType()} Price=${getPrice()} Resolution={getResolution()}K_HD";
         }
 
+        //kk-I understood the directions to indent for a TV object to be returned here ==> "The TV class has a field “MSRP: int” and another field “Type: string” with getters and setters. It
+also has a “+replenish(string: type, budget: int): TV” method,"
         // ---- TV_IF implementation ----
         public virtual TV_IF replenish(string type, int budget)
         {
