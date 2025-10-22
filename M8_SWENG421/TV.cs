@@ -4,11 +4,9 @@ namespace TvSystem
 {
     public class TV : TV_IF
     {
-        // fields required by spec
         protected int MSRP;
         protected string Type;
 
-        // MSRP table
         protected static readonly int PRICE_TV = 200;
         protected static readonly int PRICE_SMART = 300;
         protected static readonly int PRICE_ULTRA = 400;
@@ -25,7 +23,6 @@ namespace TvSystem
             Type = type;
         }
 
-        // ---- inner protected subclasses ----
         protected class Smart_TV : TV
         {
             public Smart_TV() : base(PRICE_SMART, "Smart") { }
@@ -42,10 +39,8 @@ namespace TvSystem
                 $"Brand={getBrand()} Type={getType()} Price=${getPrice()} Resolution={getResolution()}K_HD";
         }
 
-        // ---- TV_IF implementation ----
-        public virtual TV_IF replenish(string type, int budget)
+        public virtual TV replenish(string type, int budget)
         {
-            // candidates only from THIS family
             TV[] options = new TV[] { new TV(), new Smart_TV(), new UltraHD_TV() };
 
             bool TypeMatches(TV t)
@@ -61,15 +56,14 @@ namespace TvSystem
             {
                 if (!TypeMatches(cand)) continue;
                 if (cand.MSRP > budget) continue;
-                if (best == null || cand.MSRP > best.MSRP) best = cand;   // “closest and below”
+                if (best == null || cand.MSRP > best.MSRP) best = cand;
             }
-            return best;   // may be null
+            return best;
         }
 
         public virtual string getInfo() =>
             $"Brand={getBrand()} Type={getType()} Price=${getPrice()}";
 
-        // getters per spec
         public virtual string getType() => Type;
         public virtual int getPrice() => MSRP;
         public virtual string getBrand() => "Brandless";

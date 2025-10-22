@@ -12,3 +12,4 @@ C:\Users\nisha\source\repos\M8_SWENG421\M8_SWENG421\obj\Debug\net8.0\refint\M8_S
 C:\Users\nisha\source\repos\M8_SWENG421\M8_SWENG421\obj\Debug\net8.0\M8_SWENG421.pdb
 C:\Users\nisha\source\repos\M8_SWENG421\M8_SWENG421\obj\Debug\net8.0\M8_SWENG421.genruntimeconfig.cache
 C:\Users\nisha\source\repos\M8_SWENG421\M8_SWENG421\obj\Debug\net8.0\ref\M8_SWENG421.dll
+C:\Users\nisha\source\repos\M8_SWENG421\M8_SWENG421\obj\Debug\net8.0\M8_SWENG421.sourcelink.json

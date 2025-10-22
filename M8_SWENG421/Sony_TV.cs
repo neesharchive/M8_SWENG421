@@ -2,11 +2,8 @@
 
 namespace TvSystem
 {
-    public class Sony_TV : TV_IF
+    public class Sony_TV : TV
     {
-        protected int MSRP;
-        protected string Type;
-
         protected static string BrandName = "Sony";
 
         protected static readonly int PRICE_TV = 280;
@@ -25,7 +22,6 @@ namespace TvSystem
             Type = type;
         }
 
-        // inner protected subclasses
         protected class Sony_Smart_TV : Sony_TV
         {
             public Sony_Smart_TV() : base(PRICE_SMART, "Smart") { }
@@ -44,7 +40,7 @@ namespace TvSystem
 
         public static void SetBrandName(string newName) => BrandName = newName;
 
-        public virtual TV_IF replenish(string type, int budget)
+        public override TV replenish(string type, int budget)
         {
             Sony_TV[] options = new Sony_TV[] { new Sony_TV(), new Sony_Smart_TV(), new Sony_UltraHD_TV() };
 
@@ -66,11 +62,6 @@ namespace TvSystem
             return best;
         }
 
-        public virtual string getInfo() =>
-            $"Brand={getBrand()} Type={getType()} Price=${getPrice()}";
-
-        public virtual string getType() => Type;
-        public virtual int getPrice() => MSRP;
-        public virtual string getBrand() => BrandName;
+        public override string getBrand() => BrandName;
     }
 }

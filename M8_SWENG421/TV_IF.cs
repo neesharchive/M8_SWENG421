@@ -4,7 +4,7 @@ namespace TvSystem
 {
     public interface TV_IF
     {
-        TV_IF replenish(string type, int budget);   // returns TV_IF (per spec)
+        TV replenish(string type, int budget);
         string getInfo();
         string getType();
         int getPrice();

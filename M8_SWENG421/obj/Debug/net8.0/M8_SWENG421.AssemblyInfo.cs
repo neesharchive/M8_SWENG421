@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("M8_SWENG421")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+613791d4daad6cab755d32b1acca617cc3be2327")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64d1ae260f5f71ac686f28a57bccbac283d693c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("M8_SWENG421")]
 [assembly: System.Reflection.AssemblyTitleAttribute("M8_SWENG421")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

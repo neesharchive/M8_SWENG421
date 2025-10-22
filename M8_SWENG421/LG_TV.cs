@@ -2,12 +2,9 @@
 
 namespace TvSystem
 {
-    public class LG_TV : TV_IF
+    public class LG_TV : TV
     {
-        protected int MSRP;
-        protected string Type;
-
-        protected static string BrandName = "LG"; // one change affects all LG objects
+        protected static string BrandName = "LG";
 
         protected static readonly int PRICE_TV = 250;
         protected static readonly int PRICE_SMART = 350;
@@ -25,7 +22,6 @@ namespace TvSystem
             Type = type;
         }
 
-        // inner protected subclasses
         protected class LG_Smart_TV : LG_TV
         {
             public LG_Smart_TV() : base(PRICE_SMART, "Smart") { }
@@ -42,10 +38,9 @@ namespace TvSystem
                 $"Brand={getBrand()} Type={getType()} Price=${getPrice()} Resolution={getResolution()}K_HD";
         }
 
-        // allow single-point brand rename (optional helper)
         public static void SetBrandName(string newName) => BrandName = newName;
 
-        public virtual TV_IF replenish(string type, int budget)
+        public override TV replenish(string type, int budget)
         {
             LG_TV[] options = new LG_TV[] { new LG_TV(), new LG_Smart_TV(), new LG_UltraHD_TV() };
 
@@ -67,11 +62,6 @@ namespace TvSystem
             return best;
         }
 
-        public virtual string getInfo() =>
-            $"Brand={getBrand()} Type={getType()} Price=${getPrice()}";
-
-        public virtual string getType() => Type;
-        public virtual int getPrice() => MSRP;
-        public virtual string getBrand() => BrandName;
+        public override string getBrand() => BrandName;
     }
 }
